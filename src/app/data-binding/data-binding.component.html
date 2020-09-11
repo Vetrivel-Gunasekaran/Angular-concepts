@@ -1,0 +1,42 @@
+<!-- Interpolation -->
+<small>Name : {{name}}</small>
+<br>
+<small>Age: {{person.age}}</small>
+<br>
+Player Name : {{person.name}}
+
+<!-- Property Binding -->
+<div><input type="text" [value]="firstName"></div>
+<br>
+<!-- Event Binding -->
+<div><button class="btn btn-primary" (click)="login()">login</button></div>
+
+<!-- Attribute Binding -->
+<br>
+<div>
+    <table class="table">
+        <!-- <td colspan="{{4}}"></td>  -->
+        <tr>
+            <td [attr.colspan]="colSpan">Heading</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+</div>
+
+
+<!-- Class Binding -->
+<div [class]="myClassBinding">Success</div>
+<div [class]="myClassBindingFailure">Failure</div>
+<!-- Style Binding -->
+<div>
+    <small [style.color]="myColor">This is a Blue Heading</small>
+</div>
+
+<!-- Two-Way data Binding -->
+Enter Country : <div><input type="text" [(ngModel)]="country">
+                <button (click)='printCountry()'>Check current value</button>
+                </div>

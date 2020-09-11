@@ -1,0 +1,26 @@
+<!-- ngIf -->
+
+<h2 *ngIf="isLogin">Authenticated User</h2>
+<h2 *ngIf="!isLogin">UnAuthorised User</h2>
+
+<!-- ngSwitch -->
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">You chose red</div>
+    <div *ngSwitchCase="'green'">You chose green</div>
+    <div *ngSwitchCase="'blue'">You chose blue</div>
+    <div *ngSwitchDefault>Pick Again</div>
+</div>
+
+
+<!-- ngFor -->
+
+<div *ngFor="let color of colors; index as i"><small>{{i}}{{color}}</small></div>
+<div *ngFor="let player of players;index as i">
+    <small>Name : {{player.name}} Age: {{player.age}}Score: {{player.score}}</small>
+</div>
+
+<br>
+<!-- ngClass -->
+
+<div><h2 [ngClass]="isLogin === true ?'text-success':'text-danger'">Vetri</h2></div>

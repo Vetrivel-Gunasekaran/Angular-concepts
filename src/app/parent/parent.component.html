@@ -1,0 +1,11 @@
+<app-child [parentName]="title" (callParent)="receiveChild($event)"></app-child>
+
+<h5>Message received from child: {{childMessage}}</h5>
+
+
+<h6>Child Name: {{childName}}</h6>
+<br>
+<app-test [parentMessage]="message" (callParent1)="receiveMessageFromChild($event)"></app-test>
+<br>
+
+Message from my test child : {{testChildMessage}}

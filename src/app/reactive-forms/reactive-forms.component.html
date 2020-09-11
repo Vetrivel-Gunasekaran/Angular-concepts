@@ -1,0 +1,37 @@
+<form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+
+
+    <div class="form-group col-md-3">
+        <button class="btn-secondary" (click)="autoFillForm()">Auto Fill form</button>
+    </div>
+    <div class="form-group col-md-3">
+        <label for="firstname" class="label-control">Firstname:</label>
+        <input type="text" formControlName="firstname" class="form-control">
+        <span class="text-danger" *ngIf="!firstname.valid && firstname.touched">
+            Firstname is required!
+        </span>
+    </div>
+
+    <div class="form-group col-md-3">
+        <label for="password" class="label-control">Password:</label>
+        <input type="password" formControlName="password" class="form-control">
+        <span class="text-danger" *ngIf="!password.valid && password.touched">
+            Password is required!
+        </span>
+    </div>
+
+    <div formGroupName="address">
+        <div class="form-group col-md-3">
+            <label for="street">Street: </label>
+            <input formControlName="street" id="street" type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="pincode">Pincode: </label>
+            <input formControlName="pincode" id="pincode" type="text" class="form-control">
+        </div>
+    </div>
+    <div>
+        <button type="button" class="btn-primary" (click)="submitForm()">Submit</button>
+        <button type="button" class="btn-warning" (click)="loginForm.reset()">Reset</button>
+    </div>
+</form>

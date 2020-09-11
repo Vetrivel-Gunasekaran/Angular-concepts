@@ -1,0 +1,19 @@
+<div>Lowercase {{name | lowercase}}</div>
+<div>Uppercase {{name | uppercase}}</div>
+<div>TitleCase {{name | titlecase}}</div>
+<div>Slice  {{name | slice:3:5}}</div><!-- 3 is the starting index and 5 is the end limit excluding 5 -->
+<div>JSON  {{players | json}}</div>
+
+<div><small>{{5.68342423423422243 | number:'1.2-3'}}</small></div>
+<div><small>{{0.25 | percent }}</small> </div>
+<div><small>{{0.25 | currency }}</small> </div>
+<div><small>{{0.25 | currency : 'INR' }} </small></div>
+<div><small>{{0.25 | currency : 'INR' : 'code' }}</small></div> 
+    
+<small>{{date}}</small>
+<div><small> {{date | date:'short' }}</small></div>
+<div><small>{{date | date:'shortDate' }} </small></div>
+<div><small>{{date | date:'shortTime' }} </small></div>
+
+<div><h4>{{accountNumber | mask:isLogin}}</h4></div>
+    

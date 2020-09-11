@@ -1,0 +1,44 @@
+<form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
+
+    <div class="form-group">
+        <label>User Name</label>
+        <input type="text" class="form-control col-md-3" placeholder="User name" required maxlength="25"
+            [(ngModel)]="userName" name="userName" #pickedName="ngModel">
+        <span class="text-danger" *ngIf="!pickedName.valid && pickedName.touched">
+            User name is required!
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control col-md-3" placeholder="Email" required [(ngModel)]="email" name="email"
+            #userEmail="ngModel">
+        <span class="text-danger" *ngIf="!userEmail.valid && userEmail.touched">
+            Email is required!
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label>Nick Name</label>
+        <input type="text" class="form-control col-md-3" placeholder="Nick name" [(ngModel)]="nickName" name="nickName">
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control col-md-3" placeholder="Password" required [(ngModel)]="password"
+            name="password" #userPassword="ngModel">
+        <div class="text-danger" *ngIf="!userPassword.valid && userPassword.touched">
+            Password is required!
+        </div>
+    </div>
+
+
+    <button class="btn-secondary" type="submit" [disabled]="!newUserForm.form.valid">
+        Register
+    </button>
+
+    <button class="btn-warning" type="button" (click)="newUserForm.reset()">
+        Reset
+    </button>
+
+</form>
